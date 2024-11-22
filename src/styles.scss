@@ -1,0 +1,245 @@
+$color_background: #f9f7f3;
+$color_high: #ffd1e1;
+$color_medium: #fff4d1;
+$color_low: #edffd1;
+$color_navbar: #282828;
+$color_neutral: #d9d9d9;
+
+$width-content: 1000px;
+
+@font-face {
+  font-family: "GT Flaire Basic";
+  src: url("./assets/fonts/GT-Flaire-Basic-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flaire Basic";
+  src: url("./assets/fonts/GT-Flaire-Basic-Heavy.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flaire Basic";
+  src: url("./assets/fonts/GT-Flaire-Basic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Flaire Basic";
+  src: url("./assets/fonts/GT-Flaire-Basic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+// Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GT Flaire Basic", Arial, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: "GT Flaire Basic", Arial, sans-serif;
+  font-weight: 400;
+  background: $color_background;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+// #root{
+//   width: 100vw;
+// }
+
+// Styles
+nav {
+  background-color: $color_navbar;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 400;
+}
+
+button {
+  background-color: $color_neutral;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+nav button {
+  margin-inline: 5px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $width-content;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 50px;
+}
+
+#HomePage {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.col {
+  width: 33%;
+  margin-inline: auto;
+  background-color: $color_neutral;
+  align-items: stretch;
+  padding: 10px;
+
+  h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+}
+
+.TaskCard {
+  height: 200px;
+  margin-bottom: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.high {
+  background-color: $color_high;
+}
+.medium {
+  background-color: $color_medium;
+}
+.low {
+  background-color: $color_low;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.TaskDetailPage {
+  width: 100%;
+  background-color: $color_neutral;
+
+  .content {
+    width: 80%;
+    margin: auto;
+  }
+
+  .h1-container {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  h1 {
+    display: inline;
+    font-size: 3rem;
+    padding-inline: 5px;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px;
+    border-collapse: collapse; // Ensure rows don't have gaps
+
+    tr:nth-child(odd) {
+      background-color: #f6f6f6; // Light grey for odd rows
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa; // White for even rows
+    }
+
+    td {
+      padding: 10px; // Add padding for better spacing
+      border: 1px solid #d9d9d9; // Optional: Add a border for clarity
+    }
+  }
+
+  .description {
+    width: 80%;
+    margin: 20px;
+    padding: 5px;
+  }
+
+  button {
+    margin: 15px;
+    background-color: $color_navbar;
+    color: $color_background;
+  }
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.AddNewTaskPage {
+  width: 100%;
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-inline: 5px;
+    text-align: center;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin: 20px;
+    font-weight: 600;
+  }
+
+  input,
+  select,
+  textarea {
+    margin-left: 10px;
+  }
+
+  textarea {
+    margin-top: 8px;
+    width: 50%;
+    height: 8rem;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
