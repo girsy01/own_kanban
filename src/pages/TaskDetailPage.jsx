@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { TasksContext } from "../context/tasks.context";
 
-const TaskDetailPage = ({ tasks }) => {
+const TaskDetailPage = () => {
   const { taskId } = useParams();
+  const { tasks, handleDeleteTask } = useContext(TasksContext);
 
   const task = tasks.find((e) => e.id === taskId);
 
@@ -44,6 +47,9 @@ const TaskDetailPage = ({ tasks }) => {
         <Link to={`/task/edit/${task.id}`}>
           <button>Edit Task</button>
         </Link>
+        <button onClick={() => handleDeleteTask(taskId)} className="btn-delete">
+          Delete Task
+        </button>
       </div>
     </div>
   );

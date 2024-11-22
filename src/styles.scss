@@ -4,6 +4,7 @@ $color_medium: #fff4d1;
 $color_low: #edffd1;
 $color_navbar: #282828;
 $color_neutral: #d9d9d9;
+$color_alert: #fc1969;
 
 $width-content: 1000px;
 
@@ -125,6 +126,10 @@ nav button {
   flex-direction: column;
   justify-content: space-between;
 
+  :hover {
+    cursor: pointer;
+  }
+
   h3 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -184,6 +189,10 @@ nav button {
       padding: 10px; // Add padding for better spacing
       border: 1px solid #d9d9d9; // Optional: Add a border for clarity
     }
+  }
+
+  .btn-delete {
+    background-color: $color_alert;
   }
 
   .description {

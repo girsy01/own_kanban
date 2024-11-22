@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { TasksContext } from "../context/tasks.context";
 
-const AddNewTaskPage = ({ tasks, handleAddTask }) => {
+const AddNewTaskPage = () => {
   const navigate = useNavigate();
+  const { handleAddTask } = useContext(TasksContext);
 
   const [newTask, setNewTask] = useState({
-    id: `${tasks.length ? tasks.length + 1 : 1}`,
+    // id: `${tasks.length ? tasks.length + 1 : 1}`,
     title: "",
     description: "",
     assignee: "",

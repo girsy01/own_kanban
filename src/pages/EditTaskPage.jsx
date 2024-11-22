@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { TasksContext } from "../context/tasks.context";
 
-const EditTaskPage = ({ tasks, handleEditTask }) => {
+const EditTaskPage = () => {
   const navigate = useNavigate();
+  const { tasks, handleEditTask } = useContext(TasksContext);
 
   const { taskId } = useParams();
   const task = tasks.find((e) => e.id == taskId);

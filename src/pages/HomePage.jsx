@@ -1,30 +1,13 @@
 import { DndContext } from "@dnd-kit/core";
 import Column from "../components/Column";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { TasksContext } from "../context/tasks.context";
 
-const HomePage = ({ tasks, setTasks }) => {
-  function handleDrop(event) {
-    const { active, over } = event;
-
-    if (!active || !over) return;
-
-    const taskId = active.id;
-    const newStatus = over.id;
-
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === taskId) {
-        const updatedTask = { ...task };
-        updatedTask.status = newStatus;
-        return updatedTask;
-      }
-      return task;
-    });
-    // console.log(updatedTasks);
-    setTasks(updatedTasks);
-  }
+const HomePage = () => {
+  const { tasks, handleDropTask } = useContext(TasksContext);
 
   return (
-    <DndContext onDragEnd={handleDrop}>
+    <DndContext onDragEnd={handleDropTask}>
       <div id="HomePage">
         <Column tasks={tasks} colStatus="To Do" />
         <Column tasks={tasks} colStatus="In Progress" />
